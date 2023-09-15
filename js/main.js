@@ -6,7 +6,10 @@ $(function () {
   const circle = $(".rotate_circle").hasClass("off");
   const main_tit = $("#main_b > h2").hasClass("off");
 
+  //트리거이벤트
   $("#video1").click();
+  $("#sound").click();
+
   console.log(main_tit);
   if (video1) {
     setTimeout(() => {
@@ -24,7 +27,11 @@ $(function () {
       $("#main_b > h2").removeClass("off").addClass("on");
     }, 41000);
   }
-  $("#sound").click();
+
+  //링크이동
+  $("#going").on("click", function () {
+    location.href = "https://plmnko237.github.io/cometportfolio/index.html";
+  });
 
   //체크리스트
   function checkList() {
