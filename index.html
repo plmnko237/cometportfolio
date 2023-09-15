@@ -56,7 +56,13 @@
             <span class="rot2"></span>
           </div>
           <!-- 인트로동영상1 -->
-          <video autoplay="autoplay" preload="metadata" id="video1" class="on">
+          <video
+            autoplay="autoplay"
+            preload="metadata"
+            muted
+            id="video1"
+            class="on"
+          >
             <source src="./img/happy_life.mp4" type="video/mp4" />
             이 동영상은 해당 브라우저를 지원하지 않습니다.
           </video>
@@ -65,6 +71,7 @@
             autoplay="autoplay"
             loop
             preload="metadata"
+            muted
             id="video2"
             class="off"
           >
@@ -82,7 +89,7 @@
                 these times that a warm touch from someone can become the
                 driving force that helps us overcome our hardships.
               </p>
-              <button>Applying for a consultation</button>
+              <button id="going">Applying for a consultation</button>
             </div>
             <p>We are always<br />by your side!</p>
           </div>
