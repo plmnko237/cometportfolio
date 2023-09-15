@@ -29,6 +29,9 @@
                 <a href="#about">about</a>
               </li>
               <li>
+                <a href="#condition">condition</a>
+              </li>
+              <li>
                 <a href="#intro">introduce</a>
               </li>
               <li>
@@ -42,13 +45,20 @@
         <!-- 메인비주얼 -->
         <section id="main_b">
           <h2 class="off">Embrace the Journey, Embrace Yourself.</h2>
-          <audio autoplay="autoplay" preload="metadata" id="sound">
+          <!-- 크롬에서 오디오 자동재생 막힘 -->
+          <!-- <audio autoplay="autoplay" preload="metadata" id="sound">
             <source
               src="./audio/SpringMigration-The_GreatNorth.mp3"
               type="audio/mp3"
             />
             이 음원은 해당 브라우저에서 지원되지 않습니다.
-          </audio>
+          </audio> -->
+          <iframe
+            src="./audio/SpringMigration-The_GreatNorth.mp3"
+            allow="autoplay"
+            id="audio"
+            style="display: none"
+          ></iframe>
           <div class="rotate_circle off">
             <span class="rot1"></span>
           </div>
@@ -398,7 +408,11 @@
               </table>
               <div class="warning"></div>
 
-              <a href="#" class="linkbtn">To seek counseling assistance.</a>
+              <a
+                href="https://www.mohw.go.kr/react/policy/index.jsp?PAR_MENU_ID=06&MENU_ID=06330401"
+                class="linkbtn"
+                >To seek counseling assistance.</a
+              >
             </div>
           </div>
         </section>
