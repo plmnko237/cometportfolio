@@ -7,11 +7,16 @@ $(function () {
   const main_tit = $("#main_b > h2").hasClass("off");
 
   //트리거이벤트
-  $(document).on("click", function (e) {
-    console.log(e);
-    $("#video1").play();
-    $("#sound").play();
-  });
+  // $(document).on("click", function (e) {
+  //   console.log(e);
+  //   $("#video1").play();
+  //   $("#sound").play();
+  // });
+
+  $("#video1").onloadeddata = function () {
+    alert("Browser has loaded the current frame");
+    myVideo.play();
+  };
 
   console.log(main_tit);
   if (video1) {
