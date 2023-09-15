@@ -7,7 +7,7 @@ $(function () {
   const main_tit = $("#main_b > h2").hasClass("off");
 
   //트리거이벤트
-  $(document).on("mousemove", function (e) {
+  $(document).on("click", function (e) {
     console.log(e);
     $("#video1").play();
     $("#sound").play();
