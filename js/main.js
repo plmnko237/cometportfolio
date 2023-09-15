@@ -7,8 +7,11 @@ $(function () {
   const main_tit = $("#main_b > h2").hasClass("off");
 
   //트리거이벤트
-  $("#video1").click();
-  $("#sound").click();
+  $(document).on("mousemove", function (e) {
+    console.log(e);
+    $("#video1").play();
+    $("#sound").play();
+  });
 
   console.log(main_tit);
   if (video1) {
