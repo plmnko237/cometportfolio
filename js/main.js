@@ -6,6 +6,7 @@ $(function () {
   const circle = $(".rotate_circle").hasClass("off");
   const main_tit = $("#main_b > h2").hasClass("off");
 
+  $("#video1").click();
   console.log(main_tit);
   if (video1) {
     setTimeout(() => {
@@ -23,6 +24,7 @@ $(function () {
       $("#main_b > h2").removeClass("off").addClass("on");
     }, 41000);
   }
+  $("#sound").click();
 
   //체크리스트
   function checkList() {
@@ -37,6 +39,7 @@ $(function () {
     $row.find(".chk").each(function () {
       if ($(this).prop("checked")) {
         totalScore += parseInt($(this).val());
+        console.log(totalScore);
         checkedCount++;
       }
     });
