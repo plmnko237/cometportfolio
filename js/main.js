@@ -6,18 +6,6 @@ $(function () {
   const circle = $(".rotate_circle").hasClass("off");
   const main_tit = $("#main_b > h2").hasClass("off");
 
-  //트리거이벤트
-  // $(document).on("click", function (e) {
-  //   console.log(e);
-  //   $("#video1").play();
-  //   $("#sound").play();
-  // });
-
-  $("#video1").onloadeddata = function () {
-    alert("Browser has loaded the current frame");
-    myVideo.play();
-  };
-
   console.log(main_tit);
   if (video1) {
     setTimeout(() => {
@@ -42,32 +30,42 @@ $(function () {
   });
 
   //체크리스트
-  function checkList() {
-    //체크 점수 합산
+  $(".chk").on("change", function () {
+    // 전체 체크박스의 value 값을 합산할 변수
     let totalScore = 0;
-    //체크된 체크박스 수
-    let checkedCount = 0;
-    //해당 체크박스가 있는 행 찾기
-    let $row = $(this).closest("tr");
 
-    //해당 행의 체크박스를 반복하며 선택된 값을 합산
-    $row.find(".chk").each(function () {
+    // 모든 체크박스를 반복하여 값을 합산
+    $(".chk").each(function () {
       if ($(this).prop("checked")) {
-        totalScore += parseInt($(this).val());
-        console.log(totalScore);
-        checkedCount++;
+        const value = parseInt($(this).val());
+        totalScore += value;
       }
     });
 
-    //만약 체크박스가 한 행에 2개이상 체크되면 경고
-    if (checkedCount >= 2) {
-      alert("한 항목에 2개 이상 체크할 수 없습니다.");
-      //해당 행의 모든 체크를 해제
-      $row.find(".chk").prop("checked", false);
-    }
+    // 중복 체크 방지를 위한 변수
+    let hasDuplicate = false;
 
-    //합산된 점수를 .total에 출력
-    $(".total").text(totalScore);
+    // 각 행의 체크박스를 검사
+    $(".chk").each(function () {
+      const $row = $(this).closest("tr");
+
+      // 현재 체크박스를 제외한 같은 행의 체크된 체크박스 개수
+      const checkedCount = $row.find(".chk:checked").length;
+
+      // 한 행에 2개 이상 체크된 경우
+      if (checkedCount > 1) {
+        alert("한 항목마다 한 개만 체크할 수 있습니다.");
+        hasDuplicate = true;
+
+        // 해당 행의 모든 체크박스 해제
+        $row.find(".chk").prop("checked", false);
+      }
+    });
+
+    // 중복이 없는 경우에만 .total에 출력
+    if (!hasDuplicate) {
+      $(".total").text(totalScore);
+    }
 
     //경고문구
     if (totalScore > 0 && totalScore < 10) {
@@ -95,7 +93,5 @@ $(function () {
           textAlign: "center",
         });
     }
-  }
-
-  $(".chk").on("change", checkList);
+  });
 });
