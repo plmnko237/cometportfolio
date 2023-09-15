@@ -1,0 +1,484 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Josefin+Sans:wght@700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+}
+::selection {
+  background-color: mediumturquoise;
+  color: #fff;
+}
+a {
+  text-decoration: none;
+  color: #111;
+}
+img {
+  border: none;
+  display: block;
+}
+ul,
+li {
+  list-style: none;
+}
+form,
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 300;
+  color: #111;
+}
+/* 구조 */
+#wrap {
+  width: 100%;
+  height: auto;
+}
+header {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.gnb {
+  width: 1600px;
+  height: 100px;
+  margin: 0 auto;
+}
+/* 로고 */
+h1 {
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: 30px;
+  line-height: 75px;
+  float: left;
+  font-weight: normal;
+}
+h1 > a {
+  color: #fff;
+}
+/* 메뉴 */
+nav {
+  width: 400px;
+  height: 70px;
+  float: right;
+}
+nav > ul {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+nav > ul > li {
+  line-height: 70px;
+}
+nav > ul > li > a {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  cursor: pointer;
+}
+nav > ul > li:hover > a {
+  color: pink;
+}
+/* 전체 컨텐츠 영역 */
+.con {
+  width: 1800px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+/* 메인비주얼 */
+#main_b {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+#main_b > h2 {
+  width: 100%;
+  height: auto;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  position: absolute;
+  color: #fff;
+  top: 50vh;
+  font-size: 50px;
+  text-align: center;
+  z-index: 5;
+}
+.on {
+  opacity: 1;
+  transition: opacity 0.6s;
+}
+.off {
+  opacity: 0;
+}
+#main_b > .rotate_circle {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin-left: -250px;
+  z-index: 20;
+  transform-style: preserve-3d;
+}
+.rotate_circle > .rot1 {
+  display: block;
+  width: 500px;
+  height: 500px;
+  border: 3px dotted #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation-name: circle_rotate1;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  transform: rotate3d(1, 2, 3, 0deg);
+}
+@keyframes circle_rotate1 {
+  from {
+    transform: rotate3d(1, 2, 3, 0deg);
+  }
+  to {
+    transform: rotate3d(1, 2, 3, 360deg);
+  }
+}
+.rotate_circle > .rot2 {
+  display: block;
+  width: 500px;
+  height: 500px;
+  border: 3px dotted #fff;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation-name: circle_rotate2;
+  animation-duration: 1.8s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  transform: rotate3d(1, 2, 3, 0deg);
+}
+@keyframes circle_rotate2 {
+  from {
+    transform: rotate3d(1, 2, 3, 0deg);
+  }
+  to {
+    transform: rotate3d(1, 2, 3, -360deg);
+  }
+}
+#main_b > video {
+  width: 100%;
+  position: absolute;
+  top: -90px;
+}
+
+/* 공통설정 */
+section:not(#condition) {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+/* 업버튼 */
+.up {
+  position: fixed;
+  display: block;
+  color: #fff;
+  z-index: 50;
+  width: 70px;
+  height: 70px;
+  bottom: 50px;
+  right: 50px;
+  background-image: linear-gradient(
+    to top,
+    #ff9a9e 0%,
+    #fecfef 99%,
+    #fecfef 100%
+  );
+  font-size: 16px;
+  text-align: center;
+  line-height: 70px;
+  border-radius: 35px;
+  text-transform: uppercase;
+  font-weight: 600;
+  box-shadow: 2px 3px 7px -1px #cdadc3cf;
+}
+/* 첫번째 */
+#about {
+  margin-top: 100px;
+  background-image: url(../img/health5.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40%;
+}
+.txtbox_r {
+  width: 30%;
+  overflow: hidden;
+  margin-top: 200px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.txtbox_r > h2 {
+  font-size: 80px;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 50px;
+}
+.txtbox_r > p {
+  font-size: 24px;
+  line-height: 1.5;
+}
+.txtbox_r > button {
+  padding: 16px 30px;
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  background-color: #111;
+  color: #fff;
+  border: 2px solid #111;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.txtbox_r > button:hover {
+  background-color: #fff;
+  color: #111;
+  font-weight: 600;
+}
+.txtbox_r + p {
+  position: absolute;
+  right: 80px;
+  bottom: 20px;
+  font-size: 60px;
+  font-weight: 600;
+  border-radius: 50%;
+  border: 5px solid #111;
+  padding: 50px 70px;
+  background-color: #40b372;
+}
+/* 두번째 */
+section#condition {
+  overflow: hidden;
+  margin-bottom: 100px;
+}
+.heading_c {
+  text-align: center;
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.08em;
+  margin-bottom: 50px;
+}
+.heading_c::after {
+  content: "double line";
+  font-size: 0;
+  display: block;
+  width: 300px;
+  height: 1px;
+  border-bottom: 6px double cornflowerblue;
+  margin: 40px auto;
+}
+.check {
+  width: 70%;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 40px;
+  color: #333;
+  display: grid;
+  grid-template-columns: 3fr, repeat(1fr);
+  grid-template-rows: 1fr;
+}
+.check > p {
+  font-family: "Noto Sans KR", sans-serif;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.8rem;
+  color: #555;
+}
+.check > p > span {
+  font-weight: 700;
+}
+.score {
+  width: 80%;
+  font-weight: 400;
+  background-color: #efefef;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+/* 체크리스트 표 */
+.checkList {
+  width: 100%;
+  padding-bottom: 20px;
+}
+.checkList td {
+  box-sizing: border-box;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+}
+.checkList td:first-child {
+  text-align: left;
+  padding-left: 10px;
+}
+.checkList tr:last-child td {
+  text-align: right;
+  padding: 20px 0 20px 10px;
+  font-size: 24px;
+  font-weight: 800;
+  color: steelblue;
+}
+.checkList tr:last-child td:last-child {
+  padding: 20px 10px 20px 10px;
+}
+.checkList td > p {
+  font-size: 14px;
+  font-weight: 600;
+  color: slategray;
+  box-sizing: border-box;
+  padding: 5px;
+}
+.checkList td > b {
+  color: slategray;
+}
+.linkbtn {
+  display: block;
+  background-color: steelblue;
+  margin: 0 auto;
+  border: 2px solid steelblue;
+  border-radius: 34px;
+  width: 400px;
+  height: 68px;
+  line-height: 68px;
+  font-weight: 500;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  transition: 0.2s;
+}
+.linkbtn:hover {
+  background-color: #fff;
+  color: steelblue;
+}
+/* 세번째 */
+#intro {
+  background-color: #f3f3f3;
+  box-sizing: border-box;
+  padding-top: 10vh;
+}
+#intro > h2 {
+  position: absolute;
+  font-size: 10vw;
+  width: 100%;
+}
+.l_img {
+  position: absolute;
+  width: 0;
+  height: 80vh;
+  background: url(../img/health3.svg) no-repeat fixed 6% 100%;
+  background-color: #fecfef;
+  transition-duration: 0.5s;
+}
+#intro:hover .l_img {
+  width: 60%;
+}
+/* 세번째 */
+#how {
+  overflow: hidden;
+  position: relative;
+}
+#how > .con > h2 {
+  margin-top: 20vh;
+  margin-left: 3vw;
+  font-size: 40px;
+}
+#how > .con > p {
+  margin-top: 2vh;
+  margin-left: 3vw;
+  font-size: 20px;
+  line-height: 1.5;
+}
+.big_box {
+  width: 40%;
+  height: 50vh;
+  background-color: #fff;
+  margin-top: 5vh;
+  margin-left: 3vw;
+  border-radius: 50px;
+  box-sizing: border-box;
+  border: 3px solid #111;
+  padding: 50px 60px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+.big_box > a {
+  display: block;
+  width: 48%;
+  height: 48%;
+  background-color: #dbe9ff;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 8;
+  font-size: 22px;
+  font-weight: 900;
+  transition-duration: 0.3s;
+}
+.big_box > a:hover {
+  background-size: 100%;
+  background-image: linear-gradient(-225deg, #fec2d9 0%, #b0d7f1 100%);
+  transform: rotate(-5deg);
+}
+.big_box > a:nth-child(4):hover {
+  background-size: 100%;
+}
+#how::after {
+  content: "background circle";
+  font-size: 0;
+  display: block;
+  background-color: rgb(255, 255, 225);
+  width: 900px;
+  height: 900px;
+  position: absolute;
+  border-radius: 50%;
+  bottom: -200px;
+  right: -90px;
+}
+.human {
+  width: 45%;
+  position: absolute;
+  top: 10vh;
+  right: 5%;
+  z-index: 20;
+}
+.human > img {
+  max-width: fit-content;
+}
+/* footer */
+footer {
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  border-top: 1px solid #ddd;
+  color: #aaa;
+}
