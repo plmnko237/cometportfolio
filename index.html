@@ -41,7 +41,7 @@
       <main>
         <!-- 메인비주얼 -->
         <section id="main_b">
-          <audio autoplay preload="metadata">
+          <audio autoplay="autoplay" preload="metadata" id="sound">
             <source
               src="./audio/SpringMigration-The_GreatNorth.mp3"
               type="audio/mp3"
@@ -56,25 +56,19 @@
             <span class="rot2"></span>
           </div>
           <!-- 인트로동영상1 -->
-          <video
-            src="./img/happy_life.mp4"
-            autoplay
-            preload="metadata"
-            id="video1"
-            class="on"
-          >
+          <video autoplay="autoplay" preload="metadata" id="video1" class="on">
+            <source src="./img/happy_life.mp4" type="video/mp4" />
             이 동영상은 해당 브라우저를 지원하지 않습니다.
           </video>
           <!-- 그라데이션 동영상 -->
           <video
-            src="./img/gradient.mp4"
-            autoplay
-            muted
+            autoplay="autoplay"
             loop
             preload="metadata"
             id="video2"
             class="off"
           >
+            <source src="./img/gradient.mp4" type="video/mp4" />
             이 동영상은 해당 브라우저를 지원하지 않습니다.
           </video>
         </section>
