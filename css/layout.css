@@ -217,6 +217,26 @@ section:not(#condition, #symptom) {
   font-weight: 600;
   box-shadow: 2px 3px 7px -1px #cdadc3cf;
 }
+#music {
+  border: none;
+  position: fixed;
+  display: block;
+  color: #fff;
+  z-index: 51;
+  width: 70px;
+  height: 70px;
+  bottom: 140px;
+  right: 50px;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  font-size: 16px;
+  text-align: center;
+  line-height: 70px;
+  border-radius: 35px;
+  text-transform: uppercase;
+  font-weight: 600;
+  box-shadow: 2px 3px 7px -1px #a3b7db;
+  cursor: pointer;
+}
 /* 첫번째 */
 #about {
   margin-top: 100px;
