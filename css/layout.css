@@ -44,6 +44,7 @@ body {
 header {
   width: 100%;
   height: 70px;
+  overflow: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -69,7 +70,7 @@ h1 > a {
 }
 /* 메뉴 */
 nav {
-  width: 400px;
+  width: 500px;
   height: 70px;
   float: right;
 }
@@ -89,7 +90,8 @@ nav > ul > li > a {
   cursor: pointer;
 }
 nav > ul > li:hover > a {
-  color: pink;
+  color: #000;
+  font-weight: 600;
 }
 /* 전체 컨텐츠 영역 */
 .con {
@@ -186,7 +188,7 @@ nav > ul > li:hover > a {
 }
 
 /* 공통설정 */
-section:not(#condition) {
+section:not(#condition, #symptom) {
   width: 100%;
   height: 100vh;
   position: relative;
@@ -401,7 +403,118 @@ section#condition {
 #intro:hover .l_img {
   width: 60%;
 }
-/* 세번째 */
+/* 네번째 */
+#symptom {
+  overflow: hidden;
+}
+#symptom > .heading_c::after {
+  border: none;
+}
+#symptom > .heading_c > p {
+  margin-top: 28px;
+  font-size: 20px;
+  margin-bottom: 100px;
+  letter-spacing: normal;
+}
+#symptom > .heading_c button {
+  background-color: #000;
+  margin: 0 auto;
+  border: 2px solid #000;
+  border-radius: 34px;
+  width: 300px;
+  height: 50px;
+  line-height: 40px;
+  font-weight: 500;
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+#symptom > .heading_c button:hover {
+  background-color: #fff;
+  color: #000;
+}
+#symptom .modal {
+  background-color: #f0f0e5;
+  box-sizing: border-box;
+  padding: 60px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: repeat(1fr);
+  grid-template-areas:
+    "text animal mentoring"
+    "text art exercise";
+  gap: 20px;
+}
+.modal > div:not(.text) {
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 10px;
+}
+.modal img {
+  width: 90%;
+  margin: 0 auto;
+}
+.modal > .text {
+  grid-area: text;
+  margin-top: 100px;
+}
+.modal > .text > h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.modal > .text > p {
+  font-size: 18px;
+  line-height: 1.6em;
+}
+.modal > .text > p span {
+  color: #777;
+}
+.modal > .text > .visiting {
+  margin-top: 100px;
+}
+.modal > .text > .visiting > button {
+  padding: 10px 24px;
+  margin-top: 15px;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  background-color: #111;
+  color: #fff;
+  border: 2px solid #111;
+  border-radius: 30px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.modal > .text > .visiting > button:hover {
+  background-color: transparent;
+  color: #111;
+  transition: background 0.3s;
+}
+.modal > .animal {
+  grid-area: animal;
+  background-color: #40b372;
+}
+.modal > div:not(.text) > h3 {
+  margin-bottom: 10px;
+}
+.modal > div:not(.text) > p {
+  line-height: 1.6rem;
+}
+.modal > .mentoring {
+  grid-area: mentoring;
+  background-color: #72b1db;
+}
+.modal > .art {
+  grid-area: art;
+  background-color: sandybrown;
+}
+.modal > .exercise {
+  grid-area: exercise;
+  background-color: #8577e0;
+}
+/* 다섯번째 */
 #how {
   overflow: hidden;
   position: relative;
