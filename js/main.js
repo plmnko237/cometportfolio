@@ -6,7 +6,6 @@ $(function () {
   const circle = $(".rotate_circle").hasClass("off");
   const main_tit = $("#main_b > h2").hasClass("off");
 
-  console.log(main_tit);
   if (video1) {
     setTimeout(() => {
       $("#video2").removeClass("off").addClass("on");
@@ -25,7 +24,7 @@ $(function () {
   }
 
   //링크이동
-  $("#going").on("click", function () {
+  $("#music").on("click", function () {
     location.href = "https://plmnko237.github.io/cometportfolio/index.html";
   });
 
